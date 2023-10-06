@@ -8,14 +8,14 @@ export default function NavBar({user, setUser}) {
         setUser(null)
     }
     return (
-        <nav>s
-            <Link to="/orders">Order History</Link>
+        <nav>
+            <Link to="/orders">Note History</Link>
             &nbsp; | &nbsp;
-            <Link to="/orders/new">New Order</Link>
+            <Link to="/orders/new">New Note</Link>
             &nbsp; &nbsp;
             <span>Welome, {user.name} </span>
             &nbsp; &nbsp;
-            <Link to="" onClick={ handleLogOut }>Log Out</Link>
+            <button onClick={ handleLogOut }>Log Out</button>
         </nav>
     )
 }
