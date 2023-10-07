@@ -1,13 +1,14 @@
-const Note = require('../models/note')
+const Note = require('../../models/note')
 
 module.exports = {
     index,
+    create,
 }
 
 async function index (req, res) {
     try {
-        const notes = await Note.find({"user": req.user._id})
-
+        const notes = await Note.find({ user: req.user._id})
+        console.log(notes, req.user.id)
         res.json(notes)
     } catch (err) {
         console.log(err)
@@ -16,12 +17,11 @@ async function index (req, res) {
 
 async function create(req, res) {
     try {
-        req.body.users = req.user._id
-        req.body.text = req.body.text
+        req.body.user = req.user._id
         
         const note = await Note.create(req.body)
 
-        res.json()
+        res.json("")
     } catch (err) {
         console.log(err)
         res.status(400).json(err)
