@@ -9,9 +9,9 @@ export default function NavBar({user, setUser}) {
     }
     return (
         <nav>
-            <Link to="/orders">Note History</Link>
+            <Link to="/notes">Note History</Link>
             &nbsp; | &nbsp;
-            <Link to="/orders/new">New Note</Link>
+            <Link to="/notes/new">New Note</Link>
             &nbsp; &nbsp;
             <span>Welome, {user.name} </span>
             &nbsp; &nbsp;

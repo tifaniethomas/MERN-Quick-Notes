@@ -1,11 +1,15 @@
-import sendRequest from "./send-request";
+import sendRequest from './send-request';
 
-const BASE_URL = "/api/notes"
+const BASE_URL = '/api/notes'
 
-export function getNotes() {
+export function getAll() {
     return sendRequest(BASE_URL)
 }
 
 export function createNote(note) {
-    return sendRequest(`${BASE_URL}/create`, "POST", note)
+    return sendRequest(BASE_URL, "POST", note)
+}
+
+export function deleteNote(noteId) {
+    return sendRequest(`${BASE_URL}/${noteId}`, "DELETE")
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as notesAPI from "../../utilities/notes-api"
 
-export default function NoteForm({ setNotes }) {
+export default function NoteForm() {
   const [newNote, setNewNote] = useState("")
   const navigate = useNavigate()
 
